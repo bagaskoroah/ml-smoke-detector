@@ -1,0 +1,4 @@
+.venv_sd/
+data/
+logs/
+**/.ipynb_checkpoints/

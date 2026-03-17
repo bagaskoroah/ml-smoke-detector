@@ -1,0 +1,61 @@
+column_datetime: UTC
+columns_float:
+- temperature
+- humidity_pct
+- pressure
+- pm10
+- pm25
+- nc05
+- nc10
+- nc25
+columns_int:
+- tvoc
+- co2
+- raw_h2
+- raw_ethanol
+- fire_alarm
+features:
+- temperature
+- humidity_pct
+- pressure
+- pm10
+- tvoc
+- co2
+- raw_h2
+- raw_ethanol
+label: fire_alarm
+path_data_X_test: data/interim/X_test.pkl
+path_data_X_train: data/interim/X_train.pkl
+path_data_X_valid: data/interim/X_valid.pkl
+path_data_validated: data/interim/path_data_validated.pkl
+path_data_y_test: data/interim/y_test.pkl
+path_data_y_train: data/interim/y_train.pkl
+path_data_y_valid: data/interim/y_valid.pkl
+random_state: 123
+range_co2:
+- 400
+- 60000
+range_humidity_pct:
+- 10.74
+- 75.2
+range_pm10:
+- 0.0
+- 14333.69
+range_pressure:
+- 930.852
+- 939.861
+range_raw_ethanol:
+- 15317
+- 21410
+range_raw_h2:
+- 10668
+- 13803
+range_temperature:
+- -22.01
+- 59.93
+range_tvoc:
+- 0
+- 60000
+raw_data: data/raw/smoke_detection_iot.csv
+size_train_valid: 0.2
+size_valid_test: 0.5
