@@ -2,6 +2,7 @@
 import yaml
 import joblib
 from pathlib import Path
+import pandas as pd
 
 # define project root path
 project_root = Path().resolve().parent
@@ -58,6 +59,20 @@ def update_config(key, value, config):
     # reload and return config
     config = load_config()
     return config
+
+def load_data(fname: str) -> pd.DataFrame:
+    '''
+    Load dataframe and its data shape information.
+
+    Param:
+    fname <str> : raw dataset path to be loaded.
+
+    Return:
+    <pd.DataFrame> : loaded dataframe.
+    '''
+    data = pd.read_csv(fname)
+    print('Data Shape:', data.shape)
+    return data
 
 def serialize_data(data, path):
     """

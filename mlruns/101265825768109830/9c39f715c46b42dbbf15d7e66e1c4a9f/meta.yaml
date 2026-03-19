@@ -1,0 +1,14 @@
+artifact_uri: file:///home/bagaskoroah/smoke_detector/mlruns/101265825768109830/9c39f715c46b42dbbf15d7e66e1c4a9f/artifacts
+end_time: 1773930856110
+entry_point_name: ''
+experiment_id: '101265825768109830'
+lifecycle_stage: active
+run_id: 9c39f715c46b42dbbf15d7e66e1c4a9f
+run_name: LGR
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1773930852574
+status: 3
+tags: []
+user_id: bagaskoroah

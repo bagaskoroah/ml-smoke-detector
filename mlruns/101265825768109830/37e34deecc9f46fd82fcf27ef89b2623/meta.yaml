@@ -1,0 +1,14 @@
+artifact_uri: file:///home/bagaskoroah/smoke_detector/mlruns/101265825768109830/37e34deecc9f46fd82fcf27ef89b2623/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '101265825768109830'
+lifecycle_stage: active
+run_id: 37e34deecc9f46fd82fcf27ef89b2623
+run_name: brawny-mare-0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1773930990559
+status: 1
+tags: []
+user_id: bagaskoroah
