@@ -1,4 +1,5 @@
 from src.utils import *
+from src.preprocessing import *
 from typing import Any, Dict, Tuple
 import mlflow
 import mlflow.sklearn
@@ -13,6 +14,7 @@ from sklearn.tree import DecisionTreeClassifier as DTC
 from sklearn.ensemble import BaggingClassifier as BGC, RandomForestClassifier as RFC, AdaBoostClassifier as ABC, GradientBoostingClassifier as GBC
 from sklearn.metrics import recall_score, classification_report, ConfusionMatrixDisplay, confusion_matrix
 from sklearn.model_selection import RandomizedSearchCV
+from imblearn.over_sampling import SMOTE
 
 # load config
 config = load_config()
@@ -202,3 +204,58 @@ def confusion(
     plt.show()
 
     return display, tn, fp, fn, tp
+
+def main():
+    # load all data
+    X_train = deserialize_data(path=project_root/config['path_data_X_train'])
+    y_train = deserialize_data(path=project_root/config['path_data_y_train'])
+    print('All train data have been successfully loaded.')
+
+    # load preprocessing object
+    log_pipe, num_pipe = build_pipeline()
+    preprocessor = build_preprocessor(log_pipe=log_pipe, num_pipe=num_pipe)
+
+    # fit and predict cv-train
+    models = {
+    "ABC": (ABC(), config['params_abc']),
+    "BGC": (BGC(), config['params_bgc']),
+    "DTC": (DTC(), config['params_dt']),
+    "GBC": (GBC(), config['params_gbc']),
+    "LGR": (LGR(), config['params_lgr']),
+    "KNN": (KNN(), config['params_knn']),
+    "RFC": (RFC(), config['params_rfc']),
+}
+    
+    mlflow.set_tracking_uri(f'file://{project_root}/mlruns')
+    mlflow.set_experiment('smoke_detector_project')
+
+    for name, (model, params) in models.items():
+        try:
+            with mlflow.start_run(run_name=name):
+                mlflow.set_tag("model", name)
+                build_cv_train(
+                    estimator=model,
+                    preprocessor=preprocessor,
+                    params=params,
+                    X_train=X_train,
+                    y_train=y_train
+                )
+        except Exception as e:
+            print(f'Error Model {name} failed: {e}')
+
+    # obtain the best model
+    experiment = mlflow.get_experiment_by_name('smoke_detector_project')
+    runs = mlflow.search_runs(
+        experiment_ids=[experiment.experiment_id]
+    )
+    best_run = runs.sort_values(by='metrics.best_recall_cv', ascending=False).iloc[0]
+    run_id = best_run['run_id']
+
+    # load model from MLflow
+    best_model = mlflow.sklearn.load_model(f'runs:/{run_id}/model')
+
+    # serialize best model
+    serialize_data(data=best_model, path=project_root/config['path_best_model'])
+
+if __name__ == '__main__':
+    main()

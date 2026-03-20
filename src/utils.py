@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 
 # define project root path
-project_root = Path().resolve().parent
+project_root = Path(__file__).resolve().parent.parent
 
 # define config path
 config_path = project_root/'config/config.yaml'
@@ -60,18 +60,26 @@ def update_config(key, value, config):
     config = load_config()
     return config
 
-def load_data(fname: str) -> pd.DataFrame:
-    '''
-    Load dataframe and its data shape information.
+def load_data(path_data: str) -> pd.DataFrame:
+    """
+    Load csv file and return it as the pandas dataframe.
 
-    Param:
-    fname <str> : raw dataset path to be loaded.
-
+    Parameter:
+    ----------
+    path_data : str
+        Loaded data path.
+    
     Return:
-    <pd.DataFrame> : loaded dataframe.
-    '''
-    data = pd.read_csv(fname)
-    print('Data Shape:', data.shape)
+    ------
+    data : pd.DataFrame
+        Loaded dataset
+    """
+    # load csv file
+    data = pd.read_csv(path_data)
+
+    # drop duplicate data
+    data = data.drop_duplicates(keep='last')
+
     return data
 
 def serialize_data(data, path):
