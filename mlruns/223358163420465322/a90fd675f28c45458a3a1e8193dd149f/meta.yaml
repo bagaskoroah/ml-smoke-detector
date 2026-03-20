@@ -1,0 +1,14 @@
+artifact_uri: file:///home/bagaskoroah/smoke_detector/mlruns/223358163420465322/a90fd675f28c45458a3a1e8193dd149f/artifacts
+end_time: 1774008726697
+entry_point_name: ''
+experiment_id: '223358163420465322'
+lifecycle_stage: active
+run_id: a90fd675f28c45458a3a1e8193dd149f
+run_name: DTC
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774008722882
+status: 3
+tags: []
+user_id: bagaskoroah

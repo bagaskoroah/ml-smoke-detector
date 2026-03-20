@@ -1,0 +1,14 @@
+artifact_uri: file:///home/bagaskoroah/smoke_detector/mlruns/223358163420465322/253f8afbe79c40958d0c35d481634e38/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '223358163420465322'
+lifecycle_stage: active
+run_id: 253f8afbe79c40958d0c35d481634e38
+run_name: rumbling-foal-421
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774008385888
+status: 1
+tags: []
+user_id: bagaskoroah

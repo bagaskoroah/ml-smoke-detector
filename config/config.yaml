@@ -130,6 +130,7 @@ path_data_validated: data/interim/path_data_validated.pkl
 path_data_y_test: data/interim/y_test.pkl
 path_data_y_train: data/interim/y_train.pkl
 path_data_y_valid: data/interim/y_valid.pkl
+path_preprocessor_obj: models/preprocessor.pkl
 random_state: 123
 range_co2:
 - 400

@@ -1,0 +1,7 @@
+artifact_location: file:///home/bagaskoroah/smoke_detector/mlruns/223358163420465322
+creation_time: 1774006971540
+experiment_id: '223358163420465322'
+last_update_time: 1774006971540
+lifecycle_stage: active
+name: smoke_detector_project
+workspace: default

@@ -1,0 +1,14 @@
+artifact_uri: file:///home/bagaskoroah/smoke_detector/mlruns/223358163420465322/7cad757f2c35427c8c33134709f461ee/artifacts
+end_time: 1774009251867
+entry_point_name: ''
+experiment_id: '223358163420465322'
+lifecycle_stage: active
+run_id: 7cad757f2c35427c8c33134709f461ee
+run_name: RFC
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774009170905
+status: 3
+tags: []
+user_id: bagaskoroah

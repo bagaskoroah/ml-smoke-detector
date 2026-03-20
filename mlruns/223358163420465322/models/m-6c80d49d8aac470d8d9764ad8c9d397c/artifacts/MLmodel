@@ -1,0 +1,23 @@
+artifact_path: file:///home/bagaskoroah/smoke_detector/mlruns/223358163420465322/models/m-6c80d49d8aac470d8d9764ad8c9d397c/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.10.1
+model_id: m-6c80d49d8aac470d8d9764ad8c9d397c
+model_size_bytes: 1400075
+model_uuid: m-6c80d49d8aac470d8d9764ad8c9d397c
+prompts: null
+run_id: 27ba16e46a384934b50f193b6e3385c3
+utc_time_created: '2026-03-20 12:02:23.032278'

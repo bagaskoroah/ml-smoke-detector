@@ -1,0 +1,10 @@
+artifact_location: file:///home/bagaskoroah/smoke_detector/mlruns/223358163420465322/models/m-0c199d158f5c4453b8543c59022d7dfd/artifacts
+creation_timestamp: 1774009248901
+experiment_id: '223358163420465322'
+last_updated_timestamp: 1774009251865
+model_id: m-0c199d158f5c4453b8543c59022d7dfd
+model_type: null
+name: model
+source_run_id: 7cad757f2c35427c8c33134709f461ee
+status: 2
+status_message: null

@@ -1,0 +1,14 @@
+artifact_uri: file:///home/bagaskoroah/smoke_detector/mlruns/223358163420465322/a185055bd68f41ffaaabc5892a9508c7/artifacts
+end_time: 1774009170901
+entry_point_name: ''
+experiment_id: '223358163420465322'
+lifecycle_stage: active
+run_id: a185055bd68f41ffaaabc5892a9508c7
+run_name: KNN
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774009120599
+status: 3
+tags: []
+user_id: bagaskoroah
